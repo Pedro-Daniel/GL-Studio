@@ -1,2 +1,2 @@
-var life = 90
+var energy = 90
 var speed = 5

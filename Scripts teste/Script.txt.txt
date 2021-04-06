@@ -1,2 +1,3 @@
-var energy = 90
+var my_energy = 90
+var stuff
 var speed = 5

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Piano/Scripts/Key.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.92549, 0.913725, 0.552941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.615686, 0.0392157, 0.0392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+resource_local_to_scene = true
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="Key" type="Button" groups=[
+"Key",
+]]
+margin_right = 60.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 60, 15 )
+rect_rotation = -0.0120331
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+toggle_mode = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Piano" type="AudioStreamPlayer" parent="."]
+
+[node name="Flauta" type="AudioStreamPlayer" parent="."]
+
+[node name="Prog" type="AudioStreamPlayer" parent="."]
+
+[node name="Quadrada" type="AudioStreamPlayer" parent="."]
+
+[node name="Senoidal" type="AudioStreamPlayer" parent="."]
+
+[node name="Serra" type="AudioStreamPlayer" parent="."]
+
+[node name="Triangular" type="AudioStreamPlayer" parent="."]
+[connection signal="mouse_entered" from="." to="." method="_on_Key_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_Key_pressed"]

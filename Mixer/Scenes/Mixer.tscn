@@ -1,0 +1,605 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Fonts/Raleway-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Mixer/Scripts/Effect_Slider.gd" type="Script" id=2]
+[ext_resource path="res://Mixer/Scripts/Effect_Enabled.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[node name="Mixer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_Backg" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Div" type="HBoxContainer" parent="Margin_Backg"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Color" type="ColorRect" parent="Margin_Backg/Div"]
+margin_right = 97.0
+margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+color = Color( 0.282353, 0.0313726, 0.509804, 1 )
+
+[node name="Color2" type="ColorRect" parent="Margin_Backg/Div"]
+margin_left = 107.0
+margin_right = 204.0
+margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+color = Color( 0.603922, 0.603922, 0.603922, 1 )
+
+[node name="Color3" type="ColorRect" parent="Margin_Backg/Div"]
+margin_left = 214.0
+margin_right = 506.0
+margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+color = Color( 0.262745, 0, 0.301961, 1 )
+
+[node name="Color4" type="ColorRect" parent="Margin_Backg/Div"]
+margin_left = 516.0
+margin_right = 1004.0
+margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+color = Color( 0.164706, 0.192157, 0.4, 1 )
+
+[node name="Margin_Opts" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 20
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Div" type="HBoxContainer" parent="Margin_Opts"]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 1014.0
+margin_bottom = 580.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Effect" type="VBoxContainer" parent="Margin_Opts/Div"]
+margin_right = 97.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Margin_Opts/Div/Effect"]
+margin_right = 97.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Volume"
+align = 1
+valign = 1
+
+[node name="Effect_Enabled" type="CheckButton" parent="Margin_Opts/Div/Effect"]
+margin_top = 188.0
+margin_right = 97.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+script = ExtResource( 3 )
+effect_index = 1
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect" groups=[
+"Slider",
+]]
+margin_top = 376.0
+margin_right = 97.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = -50.0
+maxV = 24.0
+effect_index = 1
+parameter_to_set = "volume_db"
+
+[node name="Effect2" type="VBoxContainer" parent="Margin_Opts/Div"]
+margin_left = 107.0
+margin_right = 204.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Margin_Opts/Div/Effect2"]
+margin_right = 97.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Panning"
+align = 1
+valign = 1
+
+[node name="Effect_Enabled" type="CheckButton" parent="Margin_Opts/Div/Effect2"]
+margin_top = 188.0
+margin_right = 97.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+script = ExtResource( 3 )
+effect_index = 2
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect2" groups=[
+"Slider",
+]]
+margin_top = 376.0
+margin_right = 97.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = -1.0
+maxV = 1.0
+effect_index = 2
+parameter_to_set = "pan"
+
+[node name="Effect3" type="VBoxContainer" parent="Margin_Opts/Div"]
+margin_left = 214.0
+margin_right = 506.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Margin_Opts/Div/Effect3"]
+margin_right = 292.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Chorus"
+align = 1
+valign = 1
+
+[node name="Effect_Enabled" type="CheckButton" parent="Margin_Opts/Div/Effect3"]
+margin_top = 188.0
+margin_right = 292.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+script = ExtResource( 3 )
+effect_index = 3
+
+[node name="DivH" type="HBoxContainer" parent="Margin_Opts/Div/Effect3"]
+margin_top = 376.0
+margin_right = 292.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DivV" type="VBoxContainer" parent="Margin_Opts/Div/Effect3/DivH"]
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect3/DivH/DivV"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Voice
+Count"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect3/DivH/DivV" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 1.0
+maxV = 4.0
+effect_index = 3
+parameter_to_set = "voice_count"
+
+[node name="DivV2" type="VBoxContainer" parent="Margin_Opts/Div/Effect3/DivH"]
+margin_left = 98.0
+margin_right = 192.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect3/DivH/DivV2"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Dry"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect3/DivH/DivV2" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+maxV = 1.0
+effect_index = 3
+parameter_to_set = "dry"
+
+[node name="DivV3" type="VBoxContainer" parent="Margin_Opts/Div/Effect3/DivH"]
+margin_left = 196.0
+margin_right = 292.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect3/DivH/DivV3"]
+margin_right = 96.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+text = "Wet"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect3/DivH/DivV3" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 96.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+maxV = 1.0
+effect_index = 3
+parameter_to_set = "wet"
+
+[node name="Effect4" type="VBoxContainer" parent="Margin_Opts/Div"]
+margin_left = 516.0
+margin_right = 1004.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Margin_Opts/Div/Effect4"]
+margin_right = 488.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Phaser"
+align = 1
+valign = 1
+
+[node name="Effect_Enabled" type="CheckButton" parent="Margin_Opts/Div/Effect4"]
+margin_top = 188.0
+margin_right = 488.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+script = ExtResource( 3 )
+effect_index = 4
+
+[node name="DivH2" type="HBoxContainer" parent="Margin_Opts/Div/Effect4"]
+margin_top = 376.0
+margin_right = 488.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DivV" type="VBoxContainer" parent="Margin_Opts/Div/Effect4/DivH2"]
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect4/DivH2/DivV"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Min Hz"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect4/DivH2/DivV" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 10.0
+maxV = 10000.0
+effect_index = 4
+parameter_to_set = "range_min_hz"
+
+[node name="DivV2" type="VBoxContainer" parent="Margin_Opts/Div/Effect4/DivH2"]
+margin_left = 98.0
+margin_right = 192.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect4/DivH2/DivV2"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+text = "Max Hz"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect4/DivH2/DivV2" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 10.0
+maxV = 10000.0
+effect_index = 4
+parameter_to_set = "range_max_hz"
+
+[node name="DivV3" type="VBoxContainer" parent="Margin_Opts/Div/Effect4/DivH2"]
+margin_left = 196.0
+margin_right = 290.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect4/DivH2/DivV3"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 7 )
+text = "Rate"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect4/DivH2/DivV3" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 0.5
+maxV = 20.0
+effect_index = 4
+parameter_to_set = "rate_hz"
+
+[node name="DivV4" type="VBoxContainer" parent="Margin_Opts/Div/Effect4/DivH2"]
+margin_left = 294.0
+margin_right = 388.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect4/DivH2/DivV4"]
+margin_right = 94.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 8 )
+text = "Feedback"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect4/DivH2/DivV4" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 94.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 0.1
+maxV = 0.9
+effect_index = 4
+parameter_to_set = "feedback"
+
+[node name="DivV5" type="VBoxContainer" parent="Margin_Opts/Div/Effect4/DivH2"]
+margin_left = 392.0
+margin_right = 488.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Effect" type="Label" parent="Margin_Opts/Div/Effect4/DivH2/DivV5"]
+margin_right = 96.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
+text = "Depth"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_Slider" type="VSlider" parent="Margin_Opts/Div/Effect4/DivH2/DivV5" groups=[
+"Slider",
+]]
+margin_top = 94.0
+margin_right = 96.0
+margin_bottom = 184.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.1
+editable = false
+tick_count = 4
+ticks_on_borders = true
+script = ExtResource( 2 )
+minV = 0.1
+maxV = 4.0
+effect_index = 4
+parameter_to_set = "depth"
+[connection signal="toggled" from="Margin_Opts/Div/Effect/Effect_Enabled" to="Margin_Opts/Div/Effect/Effect_Enabled" method="_on_Effect_Enabled_toggled"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect/Effect_Slider" to="Margin_Opts/Div/Effect/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="toggled" from="Margin_Opts/Div/Effect2/Effect_Enabled" to="Margin_Opts/Div/Effect2/Effect_Enabled" method="_on_Effect_Enabled_toggled"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect2/Effect_Slider" to="Margin_Opts/Div/Effect2/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="toggled" from="Margin_Opts/Div/Effect3/Effect_Enabled" to="Margin_Opts/Div/Effect3/Effect_Enabled" method="_on_Effect_Enabled_toggled"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect3/DivH/DivV/Effect_Slider" to="Margin_Opts/Div/Effect3/DivH/DivV/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect3/DivH/DivV2/Effect_Slider" to="Margin_Opts/Div/Effect3/DivH/DivV2/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect3/DivH/DivV3/Effect_Slider" to="Margin_Opts/Div/Effect3/DivH/DivV3/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="toggled" from="Margin_Opts/Div/Effect4/Effect_Enabled" to="Margin_Opts/Div/Effect4/Effect_Enabled" method="_on_Effect_Enabled_toggled"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect4/DivH2/DivV/Effect_Slider" to="Margin_Opts/Div/Effect4/DivH2/DivV/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect4/DivH2/DivV2/Effect_Slider" to="Margin_Opts/Div/Effect4/DivH2/DivV2/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect4/DivH2/DivV3/Effect_Slider" to="Margin_Opts/Div/Effect4/DivH2/DivV3/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect4/DivH2/DivV4/Effect_Slider" to="Margin_Opts/Div/Effect4/DivH2/DivV4/Effect_Slider" method="_on_Effect_Slider_value_changed"]
+[connection signal="value_changed" from="Margin_Opts/Div/Effect4/DivH2/DivV5/Effect_Slider" to="Margin_Opts/Div/Effect4/DivH2/DivV5/Effect_Slider" method="_on_Effect_Slider_value_changed"]

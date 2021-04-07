@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Mixer/Scenes/Espectrum_Analyzer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Mixer/Scenes/Mixer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/Raleway-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Mixer/Scripts/Change_Screen_Button.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="Union" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="DivV" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DivH" type="HBoxContainer" parent="DivV"]
+margin_right = 1024.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DivV" type="VBoxContainer" parent="DivV/DivH"]
+margin_right = 84.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Change_Screen_Button" type="Button" parent="DivV/DivH/DivV"]
+margin_right = 84.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "<<"
+script = ExtResource( 4 )
+
+[node name="Dead_Zone" type="Label" parent="DivV/DivH/DivV"]
+margin_top = 84.0
+margin_right = 84.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+
+[node name="Espectrum_Analyzer" parent="DivV/DivH" instance=ExtResource( 1 )]
+margin_left = 88.0
+margin_right = 934.0
+margin_bottom = 198.0
+size_flags_stretch_ratio = 10.0
+
+[node name="Dead_Zone" type="Label" parent="DivV/DivH"]
+margin_left = 938.0
+margin_right = 1024.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Mixer" parent="DivV" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 202.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_stretch_ratio = 2.0
+[connection signal="pressed" from="DivV/DivH/DivV/Change_Screen_Button" to="DivV/DivH/DivV/Change_Screen_Button" method="_on_Change_Screen_Button_pressed"]

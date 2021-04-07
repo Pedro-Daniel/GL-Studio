@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Piano/Scenes/Scale.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Piano/Scripts/Table.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/Raleway-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Table" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 43.0
+margin_bottom = 1052.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scale1" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 1652.0
+
+[node name="Scale2" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 1652.0
+
+[node name="Scale3" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 1652.0
+
+[node name="Scale4" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 1652.0
+
+[node name="Scale5" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 256.0
+margin_right = 316.0
+margin_bottom = 1652.0
+
+[node name="Scale6" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 320.0
+margin_right = 380.0
+margin_bottom = 1652.0
+
+[node name="Scale7" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 384.0
+margin_right = 444.0
+margin_bottom = 1652.0
+
+[node name="Scale8" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 448.0
+margin_right = 508.0
+margin_bottom = 1652.0
+
+[node name="Scale9" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_right = 572.0
+margin_bottom = 1652.0
+
+[node name="Scale10" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 576.0
+margin_right = 636.0
+margin_bottom = 1652.0
+
+[node name="Scale11" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 640.0
+margin_right = 700.0
+margin_bottom = 1652.0
+
+[node name="Scale12" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 704.0
+margin_right = 764.0
+margin_bottom = 1652.0
+
+[node name="Scale13" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 768.0
+margin_right = 828.0
+margin_bottom = 1652.0
+
+[node name="Scale14" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 832.0
+margin_right = 892.0
+margin_bottom = 1652.0
+
+[node name="Scale15" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 896.0
+margin_right = 956.0
+margin_bottom = 1652.0
+
+[node name="Scale16" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 960.0
+margin_right = 1020.0
+margin_bottom = 1652.0
+
+[node name="Add_Button" type="Button" parent="."]
+margin_left = 1024.0
+margin_right = 1067.0
+margin_bottom = 1652.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Add"
+[connection signal="pressed" from="Add_Button" to="." method="_on_Add_Button_pressed"]

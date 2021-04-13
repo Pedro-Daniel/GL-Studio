@@ -22,6 +22,7 @@ func _ready():
 	reiniciate()
 
 func reiniciate():
+	histogram = []
 	for _i in range(definition):
 		histogram.append(0)
 
@@ -49,7 +50,9 @@ func _physics_process(delta):
 		mag = clamp(mag, 0.05, 1)
 		
 		histogram[i] = lerp(histogram[i], mag, acell * delta)
-	
+
+	$Spatial/CSGSphere.material.set_shader_param("hist",histogram[0]*10)
+	print(histogram[0]*10)
 	update()
 
 func _draw():

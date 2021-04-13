@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform float hist;
+
+void vertex()
+{
+	VERTEX.xy *= sin(hist * TIME * VERTEX.z); 
+}
+
+void fragment()
+{
+	ALBEDO = NORMAL.xyz * 0.5 + 0.3;
+//	VERTEX.xyz = sin(VERTEX.xyz * TIME);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/hist = 1.0
+
+[sub_resource type="Environment" id=3]
+background_mode = 1
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+radial_segments = 24
+rings = 20
+material = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.764646, 0.270547, -0.58491, 0, 0.907612, 0.41981, 0.64445, -0.321007, 0.694002, -3.70099, 2.65633, 4.39126 )
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )

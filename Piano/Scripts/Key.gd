@@ -15,8 +15,8 @@ var all_instruments = {"Piano":[false,false],"Flauta":[false,false],
 
 onready var my_scale = self.get_parent().get_index()
 onready var my_position_in_scale = self.get_index()
-onready var inst_selec = get_node("/root/Main_Interface/GDiv/Piano/Division/Sets/Div/Instrument_Selection")
-onready var mute = get_node("/root/Main_Interface/GDiv/Piano/Division/Sets/Div/Mute")
+onready var inst_selec = owner.owner.owner.get_node("Division/Sets/Div/Instrument_Selection")
+onready var mute = owner.owner.owner.get_node("Division/Sets/Div/Mute")
 onready var current_instrument = ""
 
 func _ready():
@@ -72,6 +72,7 @@ func start_to_play():
 		for i in all_instruments:
 			if all_instruments[i][0] == false and all_instruments[i][1] == true:
 				get_node(i).play()
+				yield(get_tree().create_timer(1.0),"timeout")
 
 # Configura onion skin no teclado
 func set_color_in_other_track():

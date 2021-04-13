@@ -61,12 +61,12 @@ size_flags_stretch_ratio = 1.4
 
 [node name="Espectrum_Analyzer" parent="DivV/DivH" instance=ExtResource( 1 )]
 margin_left = 88.0
-margin_right = 934.0
+margin_right = 935.0
 margin_bottom = 198.0
 size_flags_stretch_ratio = 10.0
 
 [node name="Dead_Zone" type="Label" parent="DivV/DivH"]
-margin_left = 938.0
+margin_left = 939.0
 margin_right = 1024.0
 margin_bottom = 198.0
 size_flags_horizontal = 3

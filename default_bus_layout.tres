@@ -17,6 +17,7 @@ resource_name = "Phaser"
 
 [sub_resource type="AudioEffectSpectrumAnalyzer" id=6]
 resource_name = "SpectrumAnalyzer"
+buffer_length = 0.1
 
 [resource]
 bus/0/effect/0/effect = SubResource( 1 )

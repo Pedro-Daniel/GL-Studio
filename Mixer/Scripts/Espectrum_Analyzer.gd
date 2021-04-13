@@ -52,7 +52,6 @@ func _physics_process(delta):
 		histogram[i] = lerp(histogram[i], mag, acell * delta)
 
 	$Spatial/CSGSphere.material.set_shader_param("hist",histogram[0]*10)
-	print(histogram[0]*10)
 	update()
 
 func _draw():

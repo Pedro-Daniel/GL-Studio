@@ -1,11 +1,7 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Piano/Scenes/Key.tscn" type="PackedScene" id=1]
-
-
-
-
-
+[ext_resource path="res://Piano/Scripts/Scale.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 resource_local_to_scene = true
@@ -151,12 +147,15 @@ bg_color = Color( 1, 1, 1, 1 )
 resource_local_to_scene = true
 bg_color = Color( 1, 1, 1, 1 )
 
-[node name="Scale" type="VBoxContainer"]
+[node name="Scale" type="VBoxContainer" groups=[
+"Scale",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 1196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

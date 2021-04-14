@@ -147,6 +147,8 @@ toggle_mode = true
 text = "Play"
 script = ExtResource( 4 )
 
+[node name="Timer" type="Timer" parent="Division/Sets/Div/Play_Button"]
+
 [node name="Compass_Control" type="HSlider" parent="Division/Sets/Div"]
 margin_left = 191.0
 margin_right = 374.0
@@ -220,6 +222,7 @@ __meta__ = {
 }
 [connection signal="pressed" from="Division/DivH/Change_Screen_Button" to="Division/DivH/Change_Screen_Button" method="_on_Change_Screen_Button_pressed"]
 [connection signal="toggled" from="Division/Sets/Div/Play_Button" to="Division/Sets/Div/Play_Button" method="_on_Play_Button_toggled"]
+[connection signal="timeout" from="Division/Sets/Div/Play_Button/Timer" to="Division/Sets/Div/Play_Button" method="_on_Timer_timeout"]
 [connection signal="value_changed" from="Division/Sets/Div/Compass_Control" to="Division/Sets/Div/Compass_Control" method="_on_Compass_Control_value_changed"]
 [connection signal="pressed" from="Division/Sets/Div/Record_Button" to="Division/Sets/Div/Record_Button" method="_on_Record_Button_pressed"]
 [connection signal="pressed" from="Division/Sets/Div/Mute" to="Division/Sets/Div/Mute" method="_on_Mute_pressed"]

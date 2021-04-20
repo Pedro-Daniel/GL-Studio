@@ -9,8 +9,8 @@ font_data = ExtResource( 2 )
 [node name="Note" type="HBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -924.0
-margin_bottom = -550.0
+margin_right = -372.0
+margin_bottom = -234.0
 rect_min_size = Vector2( 100, 0 )
 mouse_default_cursor_shape = 6
 size_flags_horizontal = 3
@@ -22,8 +22,8 @@ __meta__ = {
 }
 
 [node name="Shape" type="ColorRect" parent="."]
-margin_right = 90.0
-margin_bottom = 50.0
+margin_right = 642.0
+margin_bottom = 366.0
 rect_min_size = Vector2( 90, 0 )
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 3
@@ -42,9 +42,9 @@ __meta__ = {
 }
 
 [node name="R" type="ColorRect" parent="."]
-margin_left = 90.0
-margin_right = 100.0
-margin_bottom = 50.0
+margin_left = 642.0
+margin_right = 652.0
+margin_bottom = 366.0
 rect_min_size = Vector2( 10, 0 )
 mouse_default_cursor_shape = 10
 size_flags_vertical = 3

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Piano/Scripts/Espectrum_Analyzer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Samples/how-do-you-know-ncs-release.ogg" type="AudioStream" id=2]
+
+[node name="Espectrum_Analyzer" type="MarginContainer" groups=[
+"Spectrum",
+]]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0

@@ -16,10 +16,10 @@ func _on_Record_Button_pressed():
 	compass_cont.editable = false
 	instrum_select.disabled = true
 	disabled = true
-	Global.start_music()
+	play_but.start_music()
 	
 	record.set_recording_active(true)
-	yield(get_tree().create_timer(Global.amount_scales*Global.compass),"timeout")
+	yield(get_tree().create_timer(play_but.amount_scales*Global.compass),"timeout")
 	record.set_recording_active(false)
 	
 	Global.playing = false

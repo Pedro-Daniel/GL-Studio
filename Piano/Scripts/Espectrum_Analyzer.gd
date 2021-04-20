@@ -1,11 +1,11 @@
-extends Control
+extends MarginContainer
 
 onready var spectrum = AudioServer.get_bus_effect_instance(0,5)
 
 var definition = 40
-var total_w = 400
-var total_h = 200
-var offset = Vector2(224,200)
+var total_w = 600
+var total_h = 150
+var offset = Vector2(0,0)
 var min_freq = 20
 var max_freq = 20000
 
@@ -58,8 +58,14 @@ func _draw():
 	var draw_pos = Vector2(0,0)
 	var w_interval = total_w/definition
 	
-	draw_line(Vector2(0 + offset.x, -total_h + offset.y), Vector2(total_w + offset.x,-total_h + offset.y), Color.black, 2.0, true)
+#	draw_line(Vector2(0 + offset.x, -total_h + offset.y), Vector2(total_w + offset.x,-total_h + offset.y), Color.black, 2.0, true)
 	
 	for i in range(definition):
 		draw_line(draw_pos + offset, draw_pos + Vector2(0, -histogram[i] * total_h) + offset, Color.crimson.darkened((draw_pos.x / total_w)*0.7), 4.0, true)
 		draw_pos.x += w_interval
+
+func _input(event):
+	if event.is_action_pressed("R_key"):
+		$AudioStreamPlayer.play()
+	elif event.is_action_pressed("S_key"):
+		$AudioStreamPlayer.stop()

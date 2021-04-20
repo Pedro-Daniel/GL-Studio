@@ -18,15 +18,19 @@ func _on_Play_Button_toggled(button_pressed):
 func _on_Timer_timeout():
 	var current_scale = time_line.get_child(current_scale_index)
 	
-	if time_line.get_child(current_scale_index-1) != null:
+	if current_scale_index > 0:
 		time_line.get_child(current_scale_index-1).modulate = Color(1,1,1,1)
+	else:
+		time_line.get_child(amount_scales-1).modulate = Color(1,1,1,1)
 	
 	current_scale.modulate = Color(0.21,0.87,0.83,0.7)
+	
 	for key in current_scale.get_children():
 		key.start_to_play()
 	
 	current_scale_index += 1
-	if current_scale_index > amount_scales:
+	
+	if current_scale_index >= amount_scales:
 		current_scale_index = 0
 		
 	$Timer.start(Global.compass)

@@ -33,8 +33,10 @@ rings = 20
 material = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.764646, 0.270547, -0.58491, 0, 0.907612, 0.41981, 0.64445, -0.321007, 0.694002, -3.70099, 2.65633, 4.39126 )
+transform = Transform( 0.999999, 0, -0.0013407, 0, 1, 0, 0.0013407, 0, 0.999999, -3, 0, 13 )
+projection = 1
 current = true
+size = 6.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )

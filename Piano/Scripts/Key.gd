@@ -15,8 +15,10 @@ var all_instruments = {"Piano":[false,false],"Flauta":[false,false],
 
 onready var my_scale = self.get_parent().get_index()
 onready var my_position_in_scale = self.get_index()
-onready var inst_selec = owner.owner.owner.get_node("Division/Sets/Div/Instrument_Selection")
-onready var mute = owner.owner.owner.get_node("Division/Sets/Div/Mute")
+#onready var inst_selec = owner.owner.owner.get_node("Division/Sets/Div/Instrument_Selection")
+onready var inst_selec = get_parent().get_parent().owner.get_node("Division/Sets/Div/Instrument_Selection")
+#onready var mute = owner.owner.owner.get_node("Division/Sets/Div/Mute")
+onready var mute = get_parent().get_parent().owner.get_node("Division/Sets/Div/Mute")
 onready var current_instrument = ""
 
 func _ready():
@@ -80,8 +82,15 @@ func set_color_in_other_track():
 		get("custom_styles/normal").set("bg_color", Color(amount_plays,amount_plays,amount_plays))
 
 func _on_Key_pressed():
-	# Configura onion skin no teclado
-	if pressed:
+	onion_skin(pressed)
+	
+	# Testar qual nota corresponde ao botao
+	if all_instruments[current_instrument][1] == true and Global.playing == false:
+		get_node(current_instrument).play()
+
+# Configura a onion skin no teclado
+func onion_skin(param):
+	if param:
 		amount_plays -= 0.1
 	else:
 		amount_plays += 0.1
@@ -95,18 +104,20 @@ func _on_Key_pressed():
 	
 	# Diz se esta e' uma nota que deve ser tocada em sua track
 	all_instruments[current_instrument][1] = !all_instruments[current_instrument][1]
-	
-	# Testar qual nota corresponde ao botao
-	if all_instruments[current_instrument][1] == true and Global.playing == false:
-		get_node(current_instrument).play()
 
 # Selecao de teclas multiplas
 func _input(event):
 	if event.is_action_pressed("ui_mouse_right"):
 		trigger = !trigger
+	
+	elif event.is_action_pressed("ui_cancel"):
+		if pressed:
+			pressed = false
+			onion_skin(false)
+			all_instruments[current_instrument][1] = false
 
 # Selecao de teclas multiplas
 func _on_Key_mouse_entered():
 	if trigger:
 		pressed = !pressed
-		all_instruments[current_instrument][1] = !all_instruments[current_instrument][1]
+		onion_skin(pressed)

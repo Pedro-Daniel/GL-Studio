@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Samples/Pianos/Senoidal.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Fonts/Raleway-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 355.295
+margin_top = 152.689
+margin_right = 645.295
+margin_bottom = 394.689
+custom_fonts/font = SubResource( 1 )

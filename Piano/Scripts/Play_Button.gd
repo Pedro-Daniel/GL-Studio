@@ -34,3 +34,7 @@ func _on_Timer_timeout():
 		current_scale_index = 0
 		
 	$Timer.start(Global.compass)
+
+func _input(event):
+	if event.is_action_pressed("T_key"):
+		pressed = !pressed

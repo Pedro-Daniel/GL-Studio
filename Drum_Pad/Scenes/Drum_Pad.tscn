@@ -1,0 +1,198 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Drum_Pad/Scenes/Drum_Pad_Key.tscn" type="PackedScene" id=1]
+
+[node name="Drum_Pad" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Grid" type="GridContainer" parent="Margin/Center"]
+margin_left = 232.0
+margin_top = 20.0
+margin_right = 792.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 560, 560 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 4
+
+[node name="Drum_Pad_Key" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 137.0
+margin_bottom = 137.0
+my_name = "Low Tom"
+my_key = "3"
+
+[node name="Drum_Pad_Key2" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 141.0
+margin_top = 0.0
+margin_right = 278.0
+margin_bottom = 137.0
+my_name = "Mid Tom"
+my_key = "4"
+
+[node name="Drum_Pad_Key3" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_top = 0.0
+margin_right = 419.0
+margin_bottom = 137.0
+my_name = "High Tom"
+my_key = "5"
+
+[node name="Drum_Pad_Key4" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 423.0
+margin_top = 0.0
+margin_right = 560.0
+margin_bottom = 137.0
+my_name = "Cymbal"
+my_key = "6"
+
+[node name="Drum_Pad_Key5" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 141.0
+margin_right = 137.0
+margin_bottom = 278.0
+my_name = "Hihat"
+my_key = "E"
+
+[node name="Drum_Pad_Key6" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 141.0
+margin_top = 141.0
+margin_right = 278.0
+margin_bottom = 278.0
+my_name = "Open Hihat"
+my_key = "R"
+
+[node name="Drum_Pad_Key7" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_top = 141.0
+margin_right = 419.0
+margin_bottom = 278.0
+my_name = "Hihat"
+my_key = "T"
+
+[node name="Drum_Pad_Key8" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 423.0
+margin_top = 141.0
+margin_right = 560.0
+margin_bottom = 278.0
+my_name = "Ride"
+my_key = "Y"
+
+[node name="Drum_Pad_Key9" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 282.0
+margin_right = 137.0
+margin_bottom = 419.0
+my_name = "Sidestick"
+my_key = "D"
+
+[node name="Drum_Pad_Key10" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 141.0
+margin_top = 282.0
+margin_right = 278.0
+margin_bottom = 419.0
+my_name = "Snare"
+my_key = "F"
+
+[node name="Drum_Pad_Key11" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_top = 282.0
+margin_right = 419.0
+margin_bottom = 419.0
+my_name = "Snare"
+my_key = "G"
+
+[node name="Drum_Pad_Key12" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 423.0
+margin_top = 282.0
+margin_right = 560.0
+margin_bottom = 419.0
+my_name = "Sidestick"
+my_key = "H"
+
+[node name="Drum_Pad_Key13" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 423.0
+margin_right = 137.0
+margin_bottom = 560.0
+my_name = "Cymbal"
+my_key = "C"
+
+[node name="Drum_Pad_Key14" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 141.0
+margin_top = 423.0
+margin_right = 278.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 1499.02, -166.526 )
+my_name = "Kick"
+my_key = "V"
+
+[node name="Drum_Pad_Key15" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_top = 423.0
+margin_right = 419.0
+margin_bottom = 560.0
+my_name = "Kick"
+my_key = "B"
+
+[node name="Drum_Pad_Key16" parent="Margin/Center/Grid" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 423.0
+margin_top = 423.0
+margin_right = 560.0
+margin_bottom = 560.0
+my_name = "Cymbal"
+my_key = "N"

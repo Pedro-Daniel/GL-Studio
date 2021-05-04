@@ -11,6 +11,9 @@ font_data = ExtResource( 3 )
 [node name="Union" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -33,7 +36,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="Dead_Zone" type="Label" parent="DivV/DivH"]
+[node name="Dead_Zone" type="ReferenceRect" parent="DivV/DivH"]
 margin_right = 956.0
 margin_bottom = 41.0
 size_flags_horizontal = 3

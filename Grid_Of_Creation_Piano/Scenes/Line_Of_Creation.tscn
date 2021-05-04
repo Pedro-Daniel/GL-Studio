@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Grid_Of_Creation_Piano/Scripts/Line_Of_Creation.gd" type="Script" id=1]
+
+[node name="Line_Of_Creation" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 590.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 594.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+[connection signal="mouse_entered" from="ReferenceRect" to="." method="_on_ReferenceRect_mouse_entered"]
+[connection signal="mouse_exited" from="ReferenceRect" to="." method="_on_ReferenceRect_mouse_exited"]

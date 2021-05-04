@@ -44,5 +44,6 @@ __meta__ = {
 [node name="Serra" type="AudioStreamPlayer" parent="."]
 
 [node name="Triangular" type="AudioStreamPlayer" parent="."]
+
 [connection signal="mouse_entered" from="." to="." method="_on_Key_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_Key_pressed"]

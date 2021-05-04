@@ -157,19 +157,16 @@ items = [ "Piano", null, false, 0, null, "Flauta", null, false, 1, null, "Prog",
 selected = 0
 script = ExtResource( 2 )
 
-[node name="Dead_Zone" type="Label" parent="Division/Sets/Div"]
+[node name="Dead_Zone" type="ReferenceRect" parent="Division/Sets/Div"]
 margin_left = 882.0
-margin_right = 921.0
+margin_right = 922.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Change_Screen_Button" type="Button" parent="Division/Sets/Div"]
-margin_left = 946.0
+margin_left = 947.0
 margin_right = 1014.0
 margin_bottom = 45.0
 size_flags_horizontal = 3
@@ -236,13 +233,14 @@ margin_right = 768.0
 margin_bottom = 436.0
 access = 2
 filters = PoolStringArray( ".wav" )
-current_dir = "C:/Users/Usuario/Desktop/Sem Erros UP/Programas/GL Studio"
-current_file = "My_Record.wav"
-current_path = "C:/Users/Usuario/Desktop/Sem Erros UP/Programas/GL Studio/My_Record.wav"
+current_dir = "/Users/Usuario/Desktop"
+current_file = "My_record.wav"
+current_path = "/Users/Usuario/Desktop/My_record.wav"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
 [connection signal="toggled" from="Division/Sets/Div/Play_Button" to="Division/Sets/Div/Play_Button" method="_on_Play_Button_toggled"]
 [connection signal="timeout" from="Division/Sets/Div/Play_Button/Timer" to="Division/Sets/Div/Play_Button" method="_on_Timer_timeout"]
 [connection signal="value_changed" from="Division/Sets/Div/Compass_Control" to="Division/Sets/Div/Compass_Control" method="_on_Compass_Control_value_changed"]

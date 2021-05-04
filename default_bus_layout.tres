@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=7 format=2]
+[gd_resource type="AudioBusLayout" load_steps=8 format=2]
 
 [sub_resource type="AudioEffectRecord" id=1]
 resource_name = "Record"
@@ -19,9 +19,12 @@ resource_name = "Phaser"
 resource_name = "SpectrumAnalyzer"
 buffer_length = 0.1
 
+[sub_resource type="AudioEffectPitchShift" id=7]
+resource_name = "PitchShift"
+
 [resource]
 bus/0/effect/0/effect = SubResource( 1 )
-bus/0/effect/0/enabled = false
+bus/0/effect/0/enabled = true
 bus/0/effect/1/effect = SubResource( 2 )
 bus/0/effect/1/enabled = false
 bus/0/effect/2/effect = SubResource( 3 )
@@ -32,3 +35,11 @@ bus/0/effect/4/effect = SubResource( 5 )
 bus/0/effect/4/enabled = false
 bus/0/effect/5/effect = SubResource( 6 )
 bus/0/effect/5/enabled = true
+bus/1/name = "Teste"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = "Master"
+bus/1/effect/0/effect = SubResource( 7 )
+bus/1/effect/0/enabled = true

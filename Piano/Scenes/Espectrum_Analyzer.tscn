@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Piano/Scripts/Espectrum_Analyzer.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Samples/how-do-you-know-ncs-release.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Samples/Musics/how-do-you-know-ncs-release.ogg" type="AudioStream" id=2]
+
 
 [node name="Espectrum_Analyzer" type="MarginContainer" groups=[
 "Spectrum",

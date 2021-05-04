@@ -6,20 +6,19 @@ var trigger = false
 
 var amount_plays = 0.8
 var my_color = ""
+var my_pitch
 
-
-### {"Nome instrumento":[track mutada?, deve ser tocado na track?]}
+### {"Nome instrumento":[track mutada?, deve ser tocada na track?]}
 var all_instruments = {"Piano":[false,false],"Flauta":[false,false],
 "Prog":[false,false],"Quadrada":[false,false],"Senoidal":[false,false],
 "Serra":[false,false],"Triangular":[false,false]}
 
 onready var my_scale = self.get_parent().get_index()
 onready var my_position_in_scale = self.get_index()
-#onready var inst_selec = owner.owner.owner.get_node("Division/Sets/Div/Instrument_Selection")
 onready var inst_selec = get_parent().get_parent().owner.get_node("Division/Sets/Div/Instrument_Selection")
-#onready var mute = owner.owner.owner.get_node("Division/Sets/Div/Mute")
 onready var mute = get_parent().get_parent().owner.get_node("Division/Sets/Div/Mute")
 onready var current_instrument = ""
+onready var audioserver = AudioServer
 
 func _ready():
 	yield(get_tree(),"idle_frame")
@@ -52,7 +51,7 @@ func set_my_sound():
 	pressed = all_instruments[current_instrument][1]
 	
 	# Atribui o som especifico ao node especifico e gera o stream
-	var sound = "res://Assets/Samples/"+current_instrument+".ogg"
+	var sound = "res://Assets/Samples/Pianos/"+current_instrument+".ogg"
 	get_node(current_instrument).stream = load(sound)
 
 # Verifica quais tracks podem emitir som e quais não podem
@@ -64,9 +63,9 @@ func set_muted():
 		count += 1
 
 func set_my_pitch():
-	var pitch = pow(root12,((3+2*11) - my_position_in_scale)) # 3+2*11 Significa duas escalas pra tras, começando por Do
-	for i in get_children():
-		i.pitch_scale *= pitch
+	my_pitch = pow(root12,((4+2*11) - my_position_in_scale)) # 3+2*11 Significa duas escalas pra tras, começando por Do
+#	for i in get_children():
+#		i.pitch_scale = my_pitch
 
 func start_to_play():
 	# Global chama a funcao fazendo as notas tocarem num determinado tempo
@@ -86,7 +85,14 @@ func _on_Key_pressed():
 	
 	# Testar qual nota corresponde ao botao
 	if all_instruments[current_instrument][1] == true and Global.playing == false:
+		audioserver.set_bus_layout(load("res://default_bus_layout.tres"))
+		audioserver.add_bus(1)
+		audioserver.add_bus_effect(1, AudioEffectPitchShift.new())
+		audioserver.get_bus_effect(1,0).set("pitch_scale", my_pitch)
+		get_node(current_instrument).bus = "New Bus"
 		get_node(current_instrument).play()
+		yield(get_tree().create_timer(Global.compass),"timeout")
+		audioserver.remove_bus(1)
 
 # Configura a onion skin no teclado
 func onion_skin(param):
@@ -105,12 +111,13 @@ func onion_skin(param):
 	# Diz se esta e' uma nota que deve ser tocada em sua track
 	all_instruments[current_instrument][1] = !all_instruments[current_instrument][1]
 
-# Selecao de teclas multiplas
 func _input(event):
+	# Selecao de teclas multiplas
 	if event.is_action_pressed("ui_mouse_right"):
 		trigger = !trigger
 	
-	elif event.is_action_pressed("ui_cancel"):
+	# Deletar todas as teclas da track
+	elif event.is_action_pressed("ui_delete"):
 		if pressed:
 			pressed = false
 			onion_skin(false)
